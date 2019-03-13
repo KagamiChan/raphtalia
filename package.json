@@ -25,7 +25,7 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts --ext.js",
+    "lint": "eslint . --ext .ts --ext .js",
     "test": "jest"
   }
 }
