@@ -1,7 +1,9 @@
 import { buildFastify } from './app'
 
 const main = async (): Promise<void> => {
-  const fastify = buildFastify()
+  const fastify = buildFastify({
+    logger: true,
+  })
   try {
     await fastify.listen(3000)
   } catch (e) {
