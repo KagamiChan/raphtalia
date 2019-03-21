@@ -1,7 +1,11 @@
-import Koa from 'koa'
+import Fastify, { FastifyInstance } from 'fastify'
 
-export const app = new Koa()
+export const buildFastify = (): FastifyInstance => {
+  const app = Fastify()
 
-app.use(async ctx => {
-  ctx.body = 'Hello world'
-})
+  app.post('/webhook', (request, reply) => {
+    reply.send('hello world')
+  })
+
+  return app
+}

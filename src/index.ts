@@ -1,9 +1,15 @@
-import logger from 'koa-pino-logger'
+import { buildFastify } from './app'
 
-import { app } from './app'
+const main = async (): Promise<void> => {
+  const fastify = buildFastify()
+  try {
+    await fastify.listen(3000)
+  } catch (e) {
+    fastify.log.error(e)
+    process.exit(1)
+  }
+}
 
 if (require.main === module) {
-  app.use(logger())
-  app.silent = true
-  app.listen(3000)
+  main()
 }
