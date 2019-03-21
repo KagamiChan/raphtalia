@@ -1,13 +1,9 @@
-import Koa from 'koa'
 import logger from 'koa-pino-logger'
 
-const app = new Koa()
+import { app } from './app'
 
-app.use(logger())
-app.silent = true
-
-app.use(async ctx => {
-  ctx.body = 'Hello world'
-})
-
-app.listen(3000)
+if (require.main === module) {
+  app.use(logger())
+  app.silent = true
+  app.listen(3000)
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`webhook events commit_comment 1`] = `Object {}`;
+
+exports[`webhook events issue_comment 1`] = `Object {}`;
+
+exports[`webhook events issues 1`] = `Object {}`;
+
+exports[`webhook events pull_request 1`] = `Object {}`;
+
+exports[`webhook events push 1`] = `Object {}`;

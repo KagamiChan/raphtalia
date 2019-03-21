@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     node: true,
+    jest: true,
   },
   plugins: ['@typescript-eslint'],
   extends: [
@@ -11,6 +12,7 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': 'error',
+    'import/prefer-default-export': 'off',
   },
   overrides: [
     {
@@ -18,4 +20,11 @@ module.exports = {
       parser: '@typescript-eslint/parser',
     },
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.ts'],
+      },
+    },
+  },
 }
